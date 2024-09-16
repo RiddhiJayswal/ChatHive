@@ -1,24 +1,40 @@
-import React from 'react'
+import React from 'react';
+import { Fingerprint, LogIn as LoginIcon } from 'lucide-react';
 
-function Login() {
+const Login = () => {
+  const handleLogin = () => {
+    // Your login logic here
+    console.log('Login button clicked');
+  };
+
   return (
     <>
-    <div>
-    <img src="https://whatsapp-clone-826a9.web.app/whatsapp.svg" alt="" />
-    <div>ChatHive</div>
-    </div>
-        
-    <div className='white'></div> 
-    <div>
-        svg
-        <div>Sign In</div>
-        <div>Sign In with your google account and get started</div>
-        <button>Sign In with Google</button>
-        
-    </div>
+      <div className='h-[220px] bg-primary'>
+        <div className='flex ml-[200px] pt-10 items-center gap-4'>
+          <img 
+            src="https://whatsapp-clone-826a9.web.app/whatsapp.svg" 
+            alt=""
+            className='h-8'
+          />
+          <div className="text-white uppercase font-medium">Whatsapp</div>
+        </div>
+      </div>
+      <div className='h-[calc(100vh-225px)] bg-background flex justify-center items-center relative .overflow-hidden'>
+        <div className='h-[95%] w-[50%] bg-white shadow-2xl flex flex-col gap-4 justify-center items-center absolute -top-[93px]'>
+          <Fingerprint className='h-20 w-20 text-primary' strokeWidth={1} />
+          <div>Sign In</div>
+          <div>Sign in with your google account to get started.</div>
+          <button
+            onClick={handleLogin}
+            className='flex gap-2 items-center bg-primary p-4 text-white rounded-[5px]'
+          >
+            <div>Sign in with Google</div>
+            <LoginIcon />
+          </button>
+        </div>
+      </div>
     </>
+  );
+};
 
-  )
-}
-
-export default Login
+export default Login;
